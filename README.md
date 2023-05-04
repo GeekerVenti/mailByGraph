@@ -1,14 +1,16 @@
 # mailByGraph
 
-概述
-本文将介绍如何使用 Microsoft Graph API 实现网页邮件发送功能。
+## 概述
+本项目将介绍如何使用 Microsoft Graph API 实现网页邮件发送功能。
 
-准备工作
+
+## 准备工作
 注册 Microsoft Azure Active Directory(AAD)应用程序，获取客户端 ID 和客户端密钥。
 了解 Microsoft Graph API 的基本概念和使用方法。
 在本地安装 Node.js 和 npm。
-步骤
-创建一个 HTML 文件，并引入 Microsoft Graph API 的 JavaScript SDK:
+
+## 步骤
+1. 创建一个 HTML 文件，并引入 Microsoft Graph API 的 JavaScript SDK:
 
 ```html
 <!DOCTYPE html>
@@ -60,9 +62,9 @@
 </html>
 ```
     
-在服务器上部署网站，并将 JavaScript SDK 文件上传至网站根目录。在 HTML 文件中引用 JavaScript SDK。注意，需要使用 HTTPS 将请求发送到 Microsoft Graph API。如果没有 SSL,请考虑使用自签名证书或购买 SSL 证书。此外，还需要配置应用程序以允许公共访问。具体操作可参考 Microsoft Graph API 文档。
+2.在服务器上部署网站，并将 JavaScript SDK 文件上传至网站根目录。在 HTML 文件中引用 JavaScript SDK。注意，需要使用 HTTPS 将请求发送到 Microsoft Graph API。如果没有 SSL,请考虑使用自签名证书或购买 SSL 证书。此外，还需要配置应用程序以允许公共访问。具体操作可参考 Microsoft Graph API 文档。
 
-在服务器上创建一个 API,用于处理发送邮件的请求。可以使用任何 Web 框架，如 Express、Flask、Django 等。以下是一个使用 Express 实现的示例：
+3.在服务器上创建一个 API,用于处理发送邮件的请求。可以使用任何 Web 框架，如 Express、Flask、Django 等。以下是一个使用 Express 实现的示例：
         
 ```javascript
 const express = require('express');
@@ -97,4 +99,4 @@ app.listen(port, () => {
 });
 ```
     
-将 API 部署到服务器上，并启动应用程序。在浏览器中访问 http://localhost:${port}/me/sendMail,即可发送邮件。注意，需要将 yourdomain.onmicrosoft.com、yourtenantid、YourAppName 替换为实际的值。如果没有安装 Microsoft Graph API SDK,请先从 Microsoft Graph API 文档中下载并安装。
+4.将 API 部署到服务器上，并启动应用程序。在浏览器中访问 http://localhost:${port}/me/sendMail  ,即可发送邮件。注意，需要将 yourdomain.onmicrosoft.com、yourtenantid、YourAppName 替换为实际的值。如果没有安装 Microsoft Graph API SDK,请先从 Microsoft Graph API 文档中下载并安装。
